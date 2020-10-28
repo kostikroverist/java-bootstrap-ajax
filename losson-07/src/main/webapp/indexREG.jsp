@@ -215,7 +215,6 @@
                             if (data == 'Success') {
                                 $("form")[0].reset();
                                 $("form")[1].reset();
-                                alert("asfasf")
                                 loginRegisterSwitch();
 
                                 showAlertAfterRegistration();
