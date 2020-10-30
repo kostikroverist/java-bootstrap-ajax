@@ -8,11 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title></title>
     <style>
         .view {
-            background: url("https://mdbootstrap.com/img/Photos/Others/img (50).jpg")no-repeat center center;
+            background: url("https://mdbootstrap.com/img/Photos/Others/img (50).jpg") no-repeat center center;
         }
+
         html,
         body,
         header,
@@ -35,15 +36,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav w-100  d-flex ">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/createProduct.jsp">add Periodical</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/bucket.jsp">Bucket</a>
-                    </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="${pageContext.request.contextPath}/cabinet.jsp">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${pageContext.request.contextPath}/createProduct.jsp">add Periodical</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${pageContext.request.contextPath}/bucket.jsp">Bucket</a>
+                </li>
                 <li class="nav-item ml-auto">
                     <button class="product-logout">LogOut</button>
                 </li>
@@ -90,9 +91,9 @@
 
 <script>
 
-    $("button.product-logout").click(function() {
+    $("button.product-logout").click(function () {
 
-        $.get("logout", function(data) {
+        $.get("logout", function (data) {
             if (data !== '') {
                 var customUrl = '';
                 var urlContent = window.location.href.split('/');
@@ -106,7 +107,8 @@
 
     });
 
-</script>>
+</script>
+>
 </body>
 
 

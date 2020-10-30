@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
         /*FOOTER*/
 
@@ -123,6 +123,7 @@
         .social-network a {
             background-color: #F9F9F9;
         }
+
         .footer {
             position: absolute;
             right: 0;
@@ -193,7 +194,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12 copy">
-                    <p class="text-center">&copy; Copyright 2018 - Company Name.  All rights reserved.</p>
+                    <p class="text-center">&copy; Copyright 2018 - Company Name. All rights reserved.</p>
                 </div>
             </div>
 

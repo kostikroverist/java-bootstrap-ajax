@@ -14,7 +14,7 @@ import org.apache.log4j.Logger;
 public class BucketDaoImpl implements BucketDao {
 
     private static String READ_ALL = "select * from bucket";
-    private static String CREATE = "insert into bucket(user_id, product_id,purchase_date)   values(?,?,?)";
+    private static String CREATE = "insert into bucket(user_id, product_id,purchaseDate)   values(?,?,?)";
     private  static String READ_BY_ID = "select * from bucket where id=?";
     private static  String DELETE_By_ID = "delete from bucket where id=?";
 
@@ -28,11 +28,13 @@ public class BucketDaoImpl implements BucketDao {
     }
 
     @Override
-    public Bucket create(Bucket bucket) {
+    public Bucket create(Bucket bucket) throws SQLException {
 
+        int a = bucket.getUser_id();
+       // preparedStatement.setInt(1,bucket.getUser_id());
         try {
             preparedStatement = connection.prepareStatement(CREATE , Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setInt(1,bucket.getUser_id());
+
             preparedStatement.setInt(2,bucket.getProduct_id());
             preparedStatement.setDate(3,new Date(bucket.getPurchaseDate().getTime()));
             preparedStatement.executeUpdate();
