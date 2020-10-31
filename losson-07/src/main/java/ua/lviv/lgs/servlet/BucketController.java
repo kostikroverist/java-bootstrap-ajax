@@ -26,11 +26,10 @@ public class BucketController extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String productId = request.getParameter("productId");
+        String productId = request.getParameter("product_id");
 
         HttpSession session = request.getSession();
         Integer userId = (Integer)session.getAttribute("userId");
-
         Bucket bucket = new Bucket(userId, Integer.parseInt(productId), new Date());
         try {
             bucketService.create(bucket);

@@ -109,7 +109,7 @@
         var productId = jQuery(this).attr("product-id");
 
 
-        $.post("bucket", {'productId':productId},
+        $.post("bucket", {'product_id':productId},
             function(data) {
                 if (data == 'Success') {
                    $("[data-dismiss=model]").trigger({type: "click"});

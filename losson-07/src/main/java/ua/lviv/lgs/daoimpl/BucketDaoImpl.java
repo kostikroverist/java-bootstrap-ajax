@@ -28,13 +28,11 @@ public class BucketDaoImpl implements BucketDao {
     }
 
     @Override
-    public Bucket create(Bucket bucket) throws SQLException {
+    public Bucket create(Bucket bucket) {
 
-        int a = bucket.getUser_id();
-       // preparedStatement.setInt(1,bucket.getUser_id());
         try {
             preparedStatement = connection.prepareStatement(CREATE , Statement.RETURN_GENERATED_KEYS);
-
+            preparedStatement.setInt(1,bucket.getUser_id());
             preparedStatement.setInt(2,bucket.getProduct_id());
             preparedStatement.setDate(3,new Date(bucket.getPurchaseDate().getTime()));
             preparedStatement.executeUpdate();
@@ -43,6 +41,7 @@ public class BucketDaoImpl implements BucketDao {
             rs.next();
             bucket.setId(rs.getInt(1));
         } catch (SQLException e) {
+            e.printStackTrace();
             LOGGER.error(e);
         }
 

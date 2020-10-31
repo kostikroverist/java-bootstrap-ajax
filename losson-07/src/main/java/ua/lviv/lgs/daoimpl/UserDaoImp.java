@@ -43,6 +43,7 @@ public class UserDaoImp implements UserDao {
             }
 
         } catch (SQLException e) {
+            e.printStackTrace();
             LOGGER.error(e);
         }
 
@@ -65,7 +66,7 @@ public class UserDaoImp implements UserDao {
             String lastName = resultSet.getString("last_Name");
             String role = resultSet.getString("role");
             String password = resultSet.getString("password");
-            user = new User(email,firstName,lastName,role,password);
+            user = new User(userId,email,firstName,lastName,role,password);
 
         }catch (SQLException e) {
             LOGGER.error(e);
@@ -143,7 +144,7 @@ public class UserDaoImp implements UserDao {
             String lastName = resultSet.getString("last_Name");
             String role = resultSet.getString("role");
             String password = resultSet.getString("password");
-            user = new User(email,firstName,lastName,role,password);
+            user = new User( userId,email,firstName,lastName,role,password);
 
         }catch (SQLException e) {
             LOGGER.error(e);
