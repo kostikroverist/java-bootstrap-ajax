@@ -15,7 +15,11 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/login.css">
     <title>Cabinet</title>
-
+<style>
+    div.container-fluid{
+        min-height: 1000px;
+    }
+</style>
 </head>
 
 <body>
@@ -63,6 +67,16 @@
         });
 
         $('#productCards').html(cardsContent);
+    }).done(function() {
+        $.get("user-role", function(data) {
+            if (data !== '') {
+                userRole = data;
+            }
+        }).done(function() {
+            if(userRole === 'ADMINISTRATOR'){
+                $('a.card-link').hide();
+            }
+        });
     });
 
 </script>

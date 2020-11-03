@@ -42,5 +42,17 @@ public class BucketController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.getWriter().write("Success");
     }
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String bucketId = request.getParameter("bucketId");
+        try {
+            bucketService.delete(Integer.parseInt(bucketId));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
+
+        response.setContentType("text");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write("Success");
+    }
 }

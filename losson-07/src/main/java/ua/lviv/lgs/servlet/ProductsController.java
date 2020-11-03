@@ -15,7 +15,7 @@ import java.util.List;
 import ua.lviv.lgs.domain.Product;
 @WebServlet("/products")
 
-public class Products extends HttpServlet {
+public class ProductsController extends HttpServlet {
 private ProductService productService = ProductServiceImpl.getProductService();
 
 

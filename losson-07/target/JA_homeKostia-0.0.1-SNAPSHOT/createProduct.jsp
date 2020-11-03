@@ -15,6 +15,13 @@
             margin: 0 auto;
             width: 400px;
         }
+        .productCreate{
+            min-height: 500px;
+            margin: auto;
+            width: 50%;
+            border: 3px solid white;
+            padding: 10px;
+        }
     </style>
 
 </head>
@@ -24,7 +31,8 @@
 
 <h1>Hello do you wont create some product?)</h1>
 <div class="productCreate">
-<form class="createProduct">
+
+    <form class="createProduct">
 
     <div class="form-group">
         <input type="text" class="form-control productName" placeholder="enter product name">
@@ -56,7 +64,7 @@
                 var product = {
                     name : name,
                     description : description,
-                    price : price
+                    prise : price
                 };
 //add validation
                 $.post("product", product,
