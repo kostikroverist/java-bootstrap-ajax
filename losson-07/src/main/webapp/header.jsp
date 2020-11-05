@@ -120,7 +120,6 @@
                 $('li.user-bucket-option').hide();
             } else {
                 $('li.create-product-option').hide();
-                alert('hello')
             }
         });
     });
