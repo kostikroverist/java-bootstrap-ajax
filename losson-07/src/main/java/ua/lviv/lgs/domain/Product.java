@@ -1,14 +1,25 @@
 package ua.lviv.lgs.domain;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+
+@Entity
+@Table(name = "Product")
 public class Product {
+    @Id
+    @GeneratedValue
     private Integer id;
+    @Column
     private  String name;
+    @Column
     private  String description;
+    @Column
     private  Double prise;
 
 
+
+    public Product(){}
 
     public Product(Integer id, String name, String description, Double prise) {
         this.id = id;
@@ -22,6 +33,7 @@ public class Product {
         this.prise = prise;
     }
 
+    @Id
     public Integer getId() {
         return id;
     }

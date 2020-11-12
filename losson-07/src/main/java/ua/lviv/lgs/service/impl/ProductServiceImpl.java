@@ -17,17 +17,13 @@ public class ProductServiceImpl implements ProductService {
     private ProductDao productDao ;
     private static ProductService productServiceImpl;
 
-    private ProductServiceImpl() {
-        try {
-            productDao= new ProductDaoImp();
-        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException| SQLException e) {
-            LOGGER.error(e);
-        }
+    private ProductServiceImpl() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+        productDao= new ProductDaoImp();
 
     }
 
 
-    public  static  ProductService getProductService(){
+    public  static  ProductService getProductService() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
         if(productServiceImpl==null){
             productServiceImpl = new ProductServiceImpl();
         }

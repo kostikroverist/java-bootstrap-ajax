@@ -1,15 +1,33 @@
 package ua.lviv.lgs.domain;
 
+import javax.persistence.*;
 import java.util.Objects;
 
-public class User {
 
+@Entity
+@Table(name = "user")
+public class User {
+    @Id
+    @GeneratedValue
     private Integer id;
+
+    @Column
     private  String email;
+
+    @Column(name ="first_Name")
     private  String firstName;
+
+    @Column(name ="last_Name")
     private String lastName;
+    @Column(name ="role")
+
     private  String role;
+    @Column(name ="password")
+
     private  String password;
+
+
+    public User (){}
 
     public User(Integer id, String email, String firstName, String lastName, String role, String password) {
         this.id = id;
@@ -28,6 +46,7 @@ public class User {
         this.password = password;
     }
 
+    @Id
     public Integer getId() {
         return id;
     }

@@ -27,6 +27,9 @@ public class BucketsController extends HttpServlet {
     private BucketService bucketService = BucketServiceImpl.getBucketService();
     private ProductService productService = ProductServiceImpl.getProductService();
 
+    public BucketsController() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
+    }
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Bucket> buckets = null;
@@ -55,7 +58,7 @@ public class BucketsController extends HttpServlet {
             bucketDto.bucketId = bucket.getId();
             bucketDto.purchaseDate = bucket.getPurchaseDate();
 
-            Product product = idToProduct.get(bucket.getProduct_id());
+            Product product = idToProduct.get(bucket.getProduct());
             bucketDto.name = product.getName();
             bucketDto.description = product.getDescription();
             bucketDto.prise = product.getPrise();

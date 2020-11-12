@@ -14,15 +14,11 @@ public class BucketServiceImpl implements BucketService {
     private static BucketService bucketServiceImpl;
     private BucketDao bucketDao ;
 
-    private BucketServiceImpl() {
-        try {
-            bucketDao= new BucketDaoImpl();
-        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException| SQLException e) {
-            LOGGER.error(e);
-        }
+    private BucketServiceImpl() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+        bucketDao= new BucketDaoImpl();
 
     }
-    public static BucketService getBucketService(){
+    public static BucketService getBucketService() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
 
         if (bucketServiceImpl == null){
             bucketServiceImpl = new BucketServiceImpl();

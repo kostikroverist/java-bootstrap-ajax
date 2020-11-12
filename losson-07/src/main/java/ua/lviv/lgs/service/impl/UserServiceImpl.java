@@ -14,15 +14,11 @@ public class UserServiceImpl implements UserService {
     private  static UserService userServiceImpl;
     private UserDao userDao;
 
-    public UserServiceImpl(){
-        try {
-            userDao = new UserDaoImp();
-        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException| SQLException e) {
-            LOGGER.error(e);
-        }
+    public UserServiceImpl() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+        userDao = new UserDaoImp();
     }
 
-    public static UserService getUserService(){
+    public static UserService getUserService() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
 
         if (userServiceImpl == null){
             userServiceImpl = new UserServiceImpl();

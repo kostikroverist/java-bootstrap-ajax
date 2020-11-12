@@ -18,6 +18,9 @@ import ua.lviv.lgs.domain.Product;
 public class ProductsController extends HttpServlet {
 private ProductService productService = ProductServiceImpl.getProductService();
 
+    public ProductsController() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
+    }
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {

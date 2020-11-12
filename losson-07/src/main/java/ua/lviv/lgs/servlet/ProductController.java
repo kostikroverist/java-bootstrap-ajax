@@ -17,6 +17,9 @@ public class ProductController extends HttpServlet {
 
     ProductService productService = ProductServiceImpl.getProductService();
 
+    public ProductController() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
+    }
+
     // to create resource (product)
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

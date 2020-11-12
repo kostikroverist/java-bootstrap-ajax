@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JA_homeKostia (3)" />
+        <module name="JA_homeKostia (3) (JA_homeKostia)" />
         <module name="JA_homeKostia (2)" />
         <module name="JA_homeKostia (1)" />
       </profile>
@@ -15,6 +16,7 @@
       <module name="JA_homeKostia (1)" target="1.8" />
       <module name="JA_homeKostia (2)" target="1.5" />
       <module name="JA_homeKostia (3)" target="1.8" />
+      <module name="JA_homeKostia (3) (JA_homeKostia)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
